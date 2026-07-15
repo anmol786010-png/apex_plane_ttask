@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Navbar</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar container */
+        nav {
+            background-color: rgb(236, 221, 48);
+            /* Food delivery theme color */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffe6e6;
+        }
+
+        /* Hamburger menu (mobile) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* Mobile view */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #ff4d4d;
+                flex-direction: column;
+                width: 200px;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+            }
+
+            .nav-links.open {
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo" style="font-family:Verdana, Geneva, Tahoma, sans-serif;color: black;">🍔 FoodExpress</div>
+        <ul class="nav-links" id="navLinks" style="font-family: 'Courier New', Courier, monospace;">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Offers</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Delicious Food, Delivered Fast</h1>
+            <p>Order from your favorite restaurants and get it delivered to your doorstep.</p>
+            <a href="#menu" class="btn">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Popular Menu Section -->
+    <section id="menu" class="menu">
+        <h2>Popular Dishes</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="pizza.jpeg"  style=" height: 200px; width: 200px;" alt="Pizza">
+                <h3>Cheese Pizza</h3>
+                <p>₹299</p>
+            </div>
+            <div class="menu-item">
+                <img src="burger.jpg" style="height: 200px; width: 200px;" alt="Burger">
+                <h3>Veg Burger</h3>
+                <p>₹149</p>
+            </div>
+            <div class="menu-item">
+                <img src="pasta.jpg" style="height: 200px; width: 200px;" alt="Pasta">
+                <h3>White Sauce Pasta</h3>
+                <p>₹199</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="order">
+        <h2 style="color: darkorange;">Place Your Order</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="number" placeholder="Phone Number" required>
+            <input type="text" placeholder="Delivery Address" required>
+            <select required>
+                <option value=""select> <img src="" alt="">Select Dish</option>
+                <option> Cheese Pizza</option>
+                <option>Veg Burger</option>
+                <option>White Sauce Pasta</option>
+            </select>
+            <button type="submit" class="btn" style="background-color:darkslategrey">Submit Order</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 FoodExpress. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        // Toggle mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+
